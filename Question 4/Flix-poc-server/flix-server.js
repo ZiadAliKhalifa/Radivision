@@ -1,9 +1,10 @@
 let express = require('express')
+let cors = require('cors')
 let app = express()
-var json = require('./data.json');
+let json = require('./data.json');
 
 
-app.get('/movies', function (req, res) {
+app.get('/movies', cors(), function (req, res) {
     res.type('json')
     res.send(JSON.stringify(json))
 })
